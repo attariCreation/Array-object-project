@@ -26,17 +26,21 @@ const studentInfo = document.getElementById("body");
 for (let i = 0; i < stds.length; i++ ){
     const heading = document.createElement("H3");
 
-    heading.innerHTML = `name: ${stds[i].name} <br /> father Name: ${stds[i].fatherName} <br /> semester: ${stds[i].semester} <br /> Is fees paid ?: ${stds[i].isFeePaid} `;
+    heading.innerHTML = `
+    name: ${stds[i].name} <br />
+     father Name: ${stds[i].fatherName} <br />
+      semester: ${stds[i].semester} <br />
+       Is fees paid ?: ${stds[i].isFeePaid} `;
 
     studentInfo.appendChild(heading);
 
-    const courses = document.createElement("UL");
-    for(let j = 0; j < stds[i].courses.lenght; j++){
-        const list = document.createElement("LI");
+    const courseList = document.createElement("ul");
+    
+    for(let j = 0; j < stds[i].courses.length; j++){
+        const list = document.createElement("li");
         list.innerHTML = stds[i].courses[j];
         
-        courses.appendChild(list);
-        
-cxds    }
-    studentInfo.appendChild(courses);
+        courseList.appendChild(list);
+        }
+    studentInfo.appendChild(courseList);
 }
